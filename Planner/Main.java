@@ -1,9 +1,4 @@
-
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.Arrays;
 
 public class Main extends Planner {
   public static void main(String[] args) {
@@ -39,7 +34,13 @@ public class Main extends Planner {
     } catch (IOException e) {
       System.out.println(e.getMessage());
     }
-  }
+   
+    try{
+      plan.readCsv();
+    } catch(IOException e){
+      System.out.println(e.getMessage());
+    } 
+  }   
 }
 /*
  * С учетом информации полученной ранее знакомимся с параметрическим полиморфизмом

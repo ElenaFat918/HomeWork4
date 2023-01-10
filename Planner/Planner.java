@@ -1,4 +1,5 @@
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -6,7 +7,6 @@ import java.util.ArrayList;
 
 public class Planner {
     private ArrayList<Node> planner = new ArrayList<>();
-    
     public ArrayList <Node> getPlanner() {
         return planner;
     }
@@ -27,4 +27,10 @@ public class Planner {
         writer.append("\n");
         writer.close();
     }
-}
+    public void readCsv() throws IOException{
+        FileInputStream fileInputStream = new FileInputStream("planer.csv");
+        int i;
+        while((i=fileInputStream.read())!= -1){
+           System.out.print((char)i);
+        }fileInputStream.close();}
+    }
